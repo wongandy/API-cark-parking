@@ -23,7 +23,11 @@ class LoginController extends Controller
         if (! $user || ! Hash::check($request->password, $user->password)) {
             return response()->json(['error' => 'Wrong credentials'], Response::HTTP_UNAUTHORIZED);
         }
+
+        $token = $user->createToken('token')->plainTextToken;
         
-        return UserResource::make($user);
+        return response()->json([
+            'access_token' => $token
+        ], Response::HTTP_CREATED);
     }
 }
