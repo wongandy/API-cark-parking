@@ -6,6 +6,7 @@ use App\Http\Controllers\Api\V1\ZoneController;
 use App\Http\Controllers\Api\V1\VehicleController;
 use App\Http\Controllers\Api\V1\Auth\LoginController;
 use App\Http\Controllers\Api\V1\Auth\RegisterController;
+use App\Http\Controllers\Api\V1\ParkingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,4 +27,9 @@ Route::middleware('auth:sanctum')->group(function () {
 
     Route::get('zones', [ZoneController::class, 'index']);
     Route::get('zones/{zone}', [ZoneController::class, 'show']);
+
+    Route::get('parkings', [ParkingController::class, 'index']);
+    Route::get('parkings/{parking}', [ParkingController::class, 'show']);
+    Route::post('parkings/start', [ParkingController::class, 'start']);
+    Route::put('parkings/stop/{parking}', [ParkingController::class, 'stop']);
 });
