@@ -32,9 +32,7 @@ class VehicleController extends Controller
         ]);
 
         if (auth()->check()) {
-            $vehicle = auth()->user()->vehicles()->create([
-                'plate_number' => $request->plate_number,
-            ]);
+            $vehicle = Vehicle::create($request->only('plate_number'));
         }
 
         return VehicleResource::make($vehicle);
