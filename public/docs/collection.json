@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "03fd3ef5-5646-402d-ab52-3808f26b0e06",
+        "_postman_id": "5b2fd6ca-010c-4cc6-b31e-74fbd097ecd6",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -41,7 +41,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"onwzckfewh\",\"email\":\"golda14@example.org\",\"password\":\"temporibus\",\"password_confirmation\":\"consequatur\"}"
+                            "raw": "{\"name\":\"qjuhazvnbo\",\"email\":\"kole.wehner@example.org\",\"password\":\"fugiat\",\"password_confirmation\":\"ad\"}"
                         },
                         "description": "",
                         "auth": {
@@ -72,7 +72,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"cleora.schuster@example.com\",\"password\":\"similique\"}"
+                            "raw": "{\"email\":\"haag.sabryna@example.com\",\"password\":\"ipsum\"}"
                         },
                         "description": "",
                         "auth": {
@@ -131,7 +131,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"plate_number\":\"consequatur\"}"
+                            "raw": "{\"plate_number\":\"labore\"}"
                         },
                         "description": "",
                         "auth": {
@@ -152,7 +152,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "17",
+                                    "value": "15",
                                     "description": "The ID of the vehicle."
                                 }
                             ]
@@ -188,7 +188,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "13",
+                                    "value": "3",
                                     "description": "The ID of the vehicle."
                                 }
                             ]
@@ -206,7 +206,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"plate_number\":\"est\"}"
+                            "raw": "{\"plate_number\":\"itaque\"}"
                         },
                         "description": "",
                         "auth": {
@@ -227,7 +227,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "8",
+                                    "value": "2",
                                     "description": "The ID of the vehicle."
                                 }
                             ]
@@ -355,7 +355,7 @@
                                 {
                                     "id": "parking_id",
                                     "key": "parking_id",
-                                    "value": "8",
+                                    "value": "13",
                                     "description": "The ID of the parking."
                                 }
                             ]
@@ -401,7 +401,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"zone_id\":\"a\",\"vehicle_id\":\"quaerat\"}"
+                            "raw": "{\"zone_id\":\"adipisci\",\"vehicle_id\":\"amet\"}"
                         },
                         "description": "",
                         "auth": {
@@ -422,7 +422,7 @@
                                 {
                                     "id": "parking_id",
                                     "key": "parking_id",
-                                    "value": "11",
+                                    "value": "5",
                                     "description": "The ID of the parking."
                                 }
                             ]
@@ -439,6 +439,110 @@
                             }
                         ],
                         "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Endpoints",
+            "description": "",
+            "item": [
+                {
+                    "name": "Handle the incoming request.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/auth\/profile",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/auth\/profile"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "PUT api\/v1\/auth\/profile\/{user}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/auth\/profile\/:user",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/auth\/profile\/:user",
+                            "variable": [
+                                {
+                                    "id": "user",
+                                    "key": "user",
+                                    "value": "porro",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"srvidkuxghqjnxui\",\"email\":\"schamberger.vicente@example.net\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Handle the incoming request.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/auth\/password",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/auth\/password"
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"current_password\":\"eius\",\"password\":\"culpa\",\"password_confirmation\":\"dolorem\"}"
+                        },
                         "description": "",
                         "auth": {
                             "type": "noauth"
