@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\UserResource;
 
+/**
+ * @group Auth
+ */
 class RegisterController extends Controller
 {
     public function __invoke(Request $request)
