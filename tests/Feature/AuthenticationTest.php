@@ -70,4 +70,62 @@ class AuthenticationTest extends TestCase
 
         $response->assertStatus(401);
     }
+
+    public function test_user_can_update_profile()
+    {
+        $user = User::factory()->create();
+        
+        $response = $this->actingAs($user)->putJson('api/v1/auth/profile/' . $user->id, [
+            'name' => 'barry',
+            'email' => 'b@b.com',
+        ]);
+
+        $response->assertStatus(200)
+            ->assertJsonStructure(['data'])
+            ->assertJsonPath('data.name', 'barry')
+            ->assertJsonPath('data.email', 'b@b.com');
+
+        $this->assertDatabaseHas('users', [
+            'name' => 'barry',
+            'email' => 'b@b.com',
+        ]);
+    }
+
+    public function test_user_can_view_profile()
+    {
+        $user = User::factory()->create();
+        
+        $response = $this->actingAs($user)->getJson('api/v1/auth/profile');
+
+        $response->assertStatus(200)
+            ->assertJsonStructure(['data'])
+            ->assertJsonPath('data.name', $user->name)
+            ->assertJsonPath('data.email', $user->email);
+
+        $this->assertDatabaseHas('users', [
+            'name' => $user->name,
+            'email' => $user->email,
+        ]);
+    }
+
+    public function test_user_can_update_password()
+    {
+        $user = User::factory()->create();
+        
+        $response = $this->actingAs($user)->putJson('api/v1/auth/password', [
+            'current_password' => 'password',
+            'password' => 'abcdefgh',
+            'password_confirmation' => 'abcdefgh',
+        ]);
+
+        $updatedPassword = User::first()->password;
+
+        $response->assertStatus(202)
+            ->assertJsonStructure(['message'])
+            ->assertJsonPath('message', 'Password update successful.');
+
+        $this->assertDatabaseHas('users', [
+            'password' => $updatedPassword
+        ]);
+    }
 }
