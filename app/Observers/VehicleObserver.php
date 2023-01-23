@@ -8,6 +8,8 @@ class VehicleObserver
 {
     public function creating(Vehicle $vehicle)
     {
-        $vehicle->user_id = auth()->id();
+        if (auth()->check()) {
+            $vehicle->user_id = auth()->id();
+        }
     }
 }
