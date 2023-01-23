@@ -29,7 +29,7 @@ class ParkingResource extends JsonResource
                 'email' => $this->user->email
             ],
             'vehicle' => [
-                'id' => $this->vehicle->id,
+                'id' => $this->vehicle?->id,
                 'plate_number' => $this->vehicle->plate_number,
             ],
             'id' => $this->id,
