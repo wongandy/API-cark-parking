@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\ZoneResource;
 
+/**
+ * @group Auth
+ */
 class ZoneController extends Controller
 {
     public function index()
